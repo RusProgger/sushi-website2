@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SushiRoll — доставка суши и роллов в Николаеве. Сеты, роллы и акции по лучшим ценам. Свежие продукты и высокое качество.">
+    <meta name="theme-color" content="#0f0d0b">
+    <title>SushiRoll — доставка суши в Николаеве</title>
+
+    <link rel="icon" type="image/png" sizes="128x128" href="images/icons/icon-128.png">
+    <link rel="apple-touch-icon" href="images/icons/icon-128.png">
+
+    <!-- Google Fonts (с поддержкой кириллицы) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- Прелоадер -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader__inner">
+            <span class="loader__logo">SushiRoll</span>
+            <span class="loader__ring"></span>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <a class="logo" href="#main-page" aria-label="SushiRoll — на главную">Sushi<span>Roll</span></a>
+
+            <nav class="nav" id="nav" aria-label="Основное меню">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#main-page">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+                        Главная</a></li>
+                    <li><a class="nav__link" href="#sets-page">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18l-1.6 12.2a1.5 1.5 0 0 1-1.5 1.3H6.1a1.5 1.5 0 0 1-1.5-1.3L3 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+                        Сеты</a></li>
+                    <li><a class="nav__link" href="#rolls-page">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 1 9 9h-9V3z"/><path d="M3 12a9 9 0 0 1 9-9v9H3z"/></svg>
+                        Роллы</a></li>
+                    <li><a class="nav__link" href="#stock-page">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11h10v3H7z" transform="rotate(-45 12 12)"/></svg>
+                        Акции</a></li>
+                    <li><a class="nav__link" href="#track-page">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 6h14v10H1z"/><path d="M15 9h4l3 3v4h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                        Доставка</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Слайдер -->
+        <section class="hero" id="main-page" aria-label="Промо-слайдер" aria-roledescription="карусель">
+            <div class="hero__slides">
+                <div class="hero__slide is-active">
+                    <img class="hero__img" src="images/header.jpg" alt="Сеты суши на деревянной подставке">
+                    <div class="hero__overlay"></div>
+                    <div class="hero__content container">
+                        <p class="hero__kicker">SushiRoll — доставка суши</p>
+                        <h1 class="hero__title">Заказ суши в Николаеве по&nbsp;самым лучшим ценам и&nbsp;с&nbsp;неизменно высоким качеством!</h1>
+                        <a class="btn btn--accent" href="#sets-page">Смотреть меню</a>
+                    </div>
+                </div>
+                <div class="hero__slide">
+                    <img class="hero__img" src="images/header1.jpg" alt="Филадельфия и другие роллы">
+                    <div class="hero__overlay"></div>
+                    <div class="hero__content container">
+                        <p class="hero__kicker">Широкий выбор</p>
+                        <h2 class="hero__title">Обширное меню с лучшими и самыми популярными блюдами японской кухни</h2>
+                        <a class="btn btn--accent" href="#rolls-page">Смотреть роллы</a>
+                    </div>
+                </div>
+                <div class="hero__slide">
+                    <img class="hero__img" src="images/header2.jpg" alt="Повар готовит суши">
+                    <div class="hero__overlay"></div>
+                    <div class="hero__content container">
+                        <p class="hero__kicker">Качество прежде всего</p>
+                        <h2 class="hero__title">Наши повара ответственно подходят к тому, чтобы оставить клиента максимально довольным и&nbsp;сытым</h2>
+                        <a class="btn btn--accent" href="#stock-page">Выгодные акции</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Предыдущий слайд">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Следующий слайд">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+
+            <div class="hero__dots" id="heroDots" role="tablist" aria-label="Навигация по слайдам"></div>
+            <a class="hero__scroll" href="#sets-page" aria-label="Прокрутить вниз"></a>
+        </section>
+
+        <!-- Сеты -->
+        <section class="section section--sets" id="sets-page">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__kicker">для компании и праздника</p>
+                    <h2 class="section__title">Сеты на заказ</h2>
+                    <p class="section__note">Собери идеальный ужин — сет рассчитан на&nbsp;2–10&nbsp;человек</p>
+                </header>
+
+                <div class="grid">
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets1.png" alt="Суши-торт">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Суши-торт</h3>
+                            <p class="dish__desc">14 самых популярных и разнообразных роллов (всего 110 кусочков). Удивите ваших друзей или коллег.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">2 100 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets2.png" alt="Сет «Семейный»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Семейный»</h3>
+                            <p class="dish__desc">Радуга, Эби Манго, Футомаки с креветкой, Эби Сирогома, Флорида, Золотой Дракон, Вип Драйв.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">1 300 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets3.png" alt="Сет «Мальчишник»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Мальчишник»</h3>
+                            <p class="dish__desc">14 самых популярных и разнообразных роллов. Наполни свой день эксклюзивом.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">2 400 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets4.png" alt="Сет «Девичник»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Девичник»</h3>
+                            <p class="dish__desc">Скамья ролл (2 шт.), Пирамида (2 шт.), Бангкок, Филадельфия де люкс, Эби Сирогама.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">1 800 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets5.png" alt="Сет «Белочка»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Белочка»</h3>
+                            <p class="dish__desc">Филадельфия лосось, терияки лосось, маки сливочный тунец, лосось темпура.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">1 100 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/sets6.png" alt="Сет «История любви»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «История любви»</h3>
+                            <p class="dish__desc">Кранч ролл с лососем, Филадельфия лосось, маки сливочный лосось, Филадельфия креветка.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">850 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/set7.jpg" alt="Сет «Эйфория»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Эйфория»</h3>
+                            <p class="dish__desc">Маки тунец, Филадельфия лосось, Сякэ Кунсей, Лосось терияки. Всего 800 грамм, 30 штук.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">650 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/set8.jpg" alt="Унаги сет">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Унаги сет</h3>
+                            <p class="dish__desc">Золотой дракон, Филадельфия угорь, Калифорния угорь, маки угорь, нигири угорь, гунканы угорь.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">950 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/sets/set9.jpg" alt="Сет «Гурман»">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Сет «Гурман»</h3>
+                            <p class="dish__desc">Золотой дракон, Филадельфия угорь, Калифорния угорь, маки угорь, нигири угорь, гунканы угорь.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">1 000 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Роллы -->
+        <section class="section section--rolls" id="rolls-page">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__kicker">свежие и горячие</p>
+                    <h2 class="section__title">Роллы на заказ</h2>
+                    <p class="section__note">Готовим из свежих продуктов — лосось, креветки, угорь, икра тобико</p>
+                </header>
+
+                <div class="grid">
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/1.jpg" alt="Лава ролл">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Лава ролл</h3>
+                            <p class="dish__desc">Рис, нори, тигровая креветка, лосось, угорь, сыр Филадельфия, огурец, икра тобико, массаго и унаги соус.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">150 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/2.jpg" alt="Вип Драйв ролл">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Вип Драйв</h3>
+                            <p class="dish__desc">Рис, нори, копчёный угорь, лосось, темпурная креветка, сыр Филадельфия, салат чука, соус унаги, кунжут.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">150 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/3.jpg" alt="Филадельфия Vip">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Филадельфия Vip</h3>
+                            <p class="dish__desc">Рис, нори, лосось, угорь, сыр Креметте, авокадо, огурец, икра тобико. Райское наслаждение.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">250 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/4.jpg" alt="Ролл Маруськин кайф">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Маруськин кайф</h3>
+                            <p class="dish__desc">Рис, нори, лосось, сыр Филадельфия, красная икра, копчёный угорь, авокадо.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">280 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/5.jpg" alt="Ролл Флорида">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Флорида</h3>
+                            <p class="dish__desc">Рис, нори, лосось, тунец, угорь, сливочный творог, горчица, красная икра, копчёный угорь.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">380 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/6.jpg" alt="Филадельфия Блэк">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Филадельфия Блэк</h3>
+                            <p class="dish__desc">Рис, нори, чернила каракатицы, лосось, сыр Филадельфия, огурец, авокадо, чёрная икра.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">220 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/7.jpg" alt="Тобико Блэк ролл">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Тобико Блэк</h3>
+                            <p class="dish__desc">Рис, нори, чернила каракатицы, лосось, сыр Филадельфия, огурец, икра тобико, острый перец.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">350 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/8.jpg" alt="Ролл Бангкок">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Бангкок</h3>
+                            <p class="dish__desc">Филадельфия лосось с огурцом и Филадельфия с копчёным угорём, сливочный сыр.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">370 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="dish">
+                        <figure class="dish__media">
+                            <img src="images/rolls/9.jpg" alt="Маска ролл">
+                        </figure>
+                        <div class="dish__body">
+                            <h3 class="dish__name">Маска ролл</h3>
+                            <p class="dish__desc">Рис, нори, тунец, лосось, угорь, окунь, креветка, огурец, авокадо, омлет, яйцо, сыр, зелень.</p>
+                            <footer class="dish__foot">
+                                <span class="dish__price">450 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Акции -->
+        <section class="section section--stock" id="stock-page">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__kicker">не упусти момент</p>
+                    <h2 class="section__title">Наши акции</h2>
+                    <p class="section__note">Специальные позиции по сниженным ценам — только до конца недели</p>
+                </header>
+
+                <div class="grid grid--stock">
+                    <article class="promo">
+                        <figure class="promo__media">
+                            <img src="images/stock/stock1.jpg" alt="Ролл Фокусима">
+                        </figure>
+                        <div class="promo__body">
+                            <h3 class="promo__name">Фокусима</h3>
+                            <p class="promo__desc">Горячий ролл в темпуре с лососем, креветкой, сыром моцарелла, спайси соусом и имбирём.</p>
+                            <footer class="promo__foot">
+                                <span class="dish__price">550 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="promo">
+                        <figure class="promo__media">
+                            <img src="images/stock/stock2.jpg" alt="Ролл Мадагаскар">
+                        </figure>
+                        <div class="promo__body">
+                            <h3 class="promo__name">Мадагаскар</h3>
+                            <p class="promo__desc">Рис, нори, тигровая креветка, копчёный угорь, икра тобико, сыр Филадельфия, огурец, массаго соус.</p>
+                            <footer class="promo__foot">
+                                <span class="dish__price">600 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+
+                    <article class="promo">
+                        <figure class="promo__media">
+                            <img src="images/stock/stock3.jpg" alt="Ролл Император">
+                        </figure>
+                        <div class="promo__body">
+                            <h3 class="promo__name">Император</h3>
+                            <p class="promo__desc">Рис, нори, сыр Филадельфия, угорь, лосось, коктейльная креветка, икра тобико, соус унаги, кунжут.</p>
+                            <footer class="promo__foot">
+                                <span class="dish__price">450 грн</span>
+                                <a class="dish__buy" href="tel:+380631234567">Заказать</a>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Доставка -->
+        <section class="section section--track" id="track-page">
+            <div class="container">
+                <header class="section__head">
+                    <p class="section__kicker">быстро и вовремя</p>
+                    <h2 class="section__title">Доставка по всему городу</h2>
+                </header>
+
+                <div class="track">
+                    <article class="track__card">
+                        <h3 class="track__title">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 6h14v10H1z"/><path d="M15 9h4l3 3v4h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                            Доставка суши
+                        </h3>
+                        <p class="track__text">Привезём заказ горячим в любую точку города. Удобная оплата — наличными или картой.</p>
+                        <nav class="track__links" aria-label="Разделы сайта">
+                            <a href="#sets-page">Сеты</a>
+                            <a href="#rolls-page">Роллы</a>
+                            <a href="#stock-page">Акции</a>
+                        </nav>
+                    </article>
+
+                    <article class="track__card">
+                        <h3 class="track__title">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+                            Контакты
+                        </h3>
+                        <p class="track__text">Позвоните нам — примем заказ и ответим на все вопросы.</p>
+                        <nav class="track__links track__links--phones" aria-label="Телефоны">
+                            <a href="tel:+380631234567">063 123 45 67</a>
+                            <a href="tel:+380971234567">097 123 45 67</a>
+                            <a href="tel:+380951234567">095 123 45 67</a>
+                        </nav>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <a class="logo" href="#main-page">Sushi<span>Roll</span></a>
+            <p class="footer__text">&copy; 2024 SushiRoll. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка «наверх» -->
+    <button class="to-top" id="toTop" aria-label="Наверх">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
